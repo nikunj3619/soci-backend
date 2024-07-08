@@ -21,7 +21,7 @@ router.get('/', function(req, res, next) {
 router.get('/qrcode',isLoggedIn, async(req, res) => {
   const societyId = await societies.findOne({username : req.session.passport.user});
   const token = societyId._id.toString();
-  const websiteUrl = 'http://localhost:3000/signin-qrcode'; 
+  const websiteUrl = 'https://soci-backend.onrender.com/signin-qrcode'; 
   const qrCodeUrl = `${websiteUrl}?token=${token}`;
   qr.toDataURL(qrCodeUrl, (err, url) => {
     if (err) {
@@ -185,7 +185,6 @@ async function tokenauth(req, res, next){
 
   
       const token = req.query.token;
-      console.log(token);
       const soc = await societies.findOne({_id: token})
       if (soc) {
         // User found, authenticate
