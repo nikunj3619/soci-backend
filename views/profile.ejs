@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            font-family: "Gilroy";
+        }
+        .wrap{
+            height: 100vh;
+            background-color:  rgb(148 163 184);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="nav w-full h-auto border-2 border-red-800 flex justify-between">
+            <div class="border-2 border-red-800 flex justify center items-center"><h2><%= soc.name %></h2></div>
+            <a href="/logout" class="border-2 border-red-800 flex justify center items-center"><h2>Logout</h2></a>
+        </div>
+    
+        <div class="nav w-full h-[50px] grid grid-cols-5 gap-2 ">
+            <div class=" flex justify center items-center mx-2 my-2 w-fit"><h2>Photo</h2></div>
+            <div class="flex justify center items-center  my-2 w-fit"><h2>Name</h2></div>
+            <div class="flex justify center items-center  my-2 w-fit"><h2>Member</h2></div>
+            <div class="flex justify center items-center my-2 w-fit"><h2>Contact</h2></div>
+            <div class=" flex justify center items-center my-2 w-fit"><h2>Time</h2></div>
+        </div>
+    
+        <div class="cards w-full h-auto justify-between flex flex-wrap">
+            <% soc.visitor.forEach(function(person){ %>
+                <div class="card my-2 w-full grid grid-cols-5 gap-2 bg-slate-700 rounded-lg text-white">
+                    <div class="flex justify-center">
+                        <img src="/images/uploads/<%=person.selfie %>" alt="" class=" my-2">
+                    </div>
+                    
+                    <h3 class=" break-words  my-2"><%= person.name %></h3>
+                    <h3 class="break-words  my-2"><%= person.membername %></h3>
+                    <h3 class=" break-words  my-2"><%= person.contact %></h3>
+                    <h4 class=" break-words  my-2 text-xs"><%= person.time %></h4>
+                </div>
+            <% })%>
+        </div>
+    </div>
+    
+</body>
+</html>

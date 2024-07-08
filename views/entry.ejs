@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Photo Capture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            font-family: "Gilroy";
+        }
+    </style>
+</head>
+<body>
+    <div class="w-full h-[100vh] border border-red-700 flex justify-center items-center">
+        <div class="w-fit border border-red-700">
+            <h1>Webcam Photo Capture</h1>
+           
+                <div class="flex border border-red-700 flex-col justify-center items-center">
+                    <div class="w-[150px] h-[150px] overflow-hidden rounded-full bg-red-700">
+                        <video id="video" autoplay class="rounded-[500px] translate-y-2 scale-150"></video>
+                    </div>
+            
+                    
+                    <button id="startbutton" class="cursor-pointer border border-zinc-700 w-[300px] h-[40px] mt-3 rounded-xl mb-3">Capture</button>
+                    <canvas id="canvas" style="display:none;" class="rounded-full"></canvas>
+            
+                    <div class="w-[150px] h-[150px] overflow-hidden rounded-full bg-red-700">
+                        <img id="photo" src="" alt="" class="rounded-[500px] translate-y-2 scale-150" />
+                    </div>
+                    
+                </div>
+            
+            
+             
+        
+            <div class="flex mt-3">
+                <div class="border-2 border-red-700 w-[300px] h-[40px]">
+                    <p type="text" name="name" id="name" class="px-2 flex items-center">name</p>
+                </div>
+                
+                <button onclick="namerecog()" style="border: transparent;padding: 0 0.5rem;" class="w-[40px] h-[40px] border border-red-700 bg-red-700 rounded-full ml-2">
+                    S
+                 </button>
+                 <h3 id="output" class="hide"></h3> 
+            </div>
+        
+            <div class="flex mt-3">
+                <div class="border-2 border-red-700 w-[300px] h-[40px]">
+                    <p type="text" name="membername" id="membername" class="px-2 flex items-center">membername</p>
+                </div>
+                
+                <button onclick="membernamerecog()" style="border: transparent;padding: 0 0.5rem;" class="w-[40px] h-[40px] border border-red-700 bg-red-700 rounded-full ml-2">
+                    S
+                 </button>
+                 <h3 id="output" class="hide"></h3> 
+            </div>
+        
+            <div class="flex mt-3">
+                <div class="border-2 border-red-700 w-[300px] h-[40px]">
+                    <p type="text" name="contact" id="contact" class="px-2 flex items-center">contact</p>
+                </div>
+                
+                <button onclick="contactrecog()" style="border: transparent;padding: 0 0.5rem;" class="w-[40px] h-[40px] border border-red-700 bg-red-700 rounded-full ml-2">
+                    S
+                 </button>
+                 <h3 id="output" class="hide"></h3> 
+            </div>
+            <div class="flex justify-center items-center">
+                <button id="submitForm" onclick="" class="cursor-pointer border border-zinc-700 w-[300px] h-[40px] mt-3 rounded-xl mb-3">Submit</button>
+            </div>
+        
+            <button onclick="back()" class="bg-red-700 w-20 h-10">Back</button>
+        </div>
+        
+    </div>
+    
+
+    <script src="/javascripts/script.js"></script>
+   
+        
+    
+</body>
+</html>
